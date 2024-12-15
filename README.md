@@ -83,7 +83,7 @@ print(response)
 ### Running the Streamlit App
 
 ```bash
-streamlit run app.py
+streamlit run pdf-rag-streamlit.py
 ```
 
 ## 🤖 How RAG Works
