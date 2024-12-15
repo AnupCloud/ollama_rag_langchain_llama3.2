@@ -1,41 +1,140 @@
-<!-- @format -->
-# Welcome to The AI Guild 🚀
+# Ollama Llama 3.2 RAG Project
 
-**This code is a part of a module in our vibrant AI community 🚀[Join the AI Guild Community](https://bit.ly/ai-guild-join), where like-minded entrepreneurs and programmers come together to build real-world AI-based solutions.**
+## Overview
 
-### What is The AI Guild?
-The AI Guild is a collaborative community designed for developers, tech enthusiasts, and entrepreneurs who want to **build practical AI tools** and solutions. Whether you’re just starting or looking to level up your skills, this is the place to dive deeper into AI in a supportive, hands-on environment.
+This project implements a cutting-edge Retrieval-Augmented Generation (RAG) system utilizing state-of-the-art machine learning models and tools to enhance natural language understanding and response generation.
 
-### Why Join Us?
-- **Collaborate with Like-Minded Builders**: Work alongside a community of individuals passionate about AI, sharing ideas and solving real-world problems together.
-- **Access to Exclusive Resources**: Gain entry to our Code & Template Vault, a collection of ready-to-use code snippets, templates, and AI projects.
-- **Guided Learning Paths**: Follow structured paths, from AI Basics for Builders to advanced classes like AI Solutions Lab, designed to help you apply your knowledge.
-- **Weekly Live Calls & Q&A**: Get direct support, feedback, and guidance during live sessions with the community.
-- **Real-World AI Projects**: Work on projects that make an impact, learn from others, and showcase your work.
+## 🚀 Project Components
 
-### Success Stories
-Here’s what some of our members are saying:
-- **"Joining The AI Guild has accelerated my learning. I’ve already built my first AI chatbot with the help of the community!"**
-- **"The live calls and feedback have been game-changers. I’ve implemented AI automation in my business, saving hours each week."**
+- **Ollama**: A tool for deploying large language models (LLMs)
+- **Llama 3.2**: Meta's advanced language model for diverse NLP tasks
+- **Chroma DB**: High-performance vector database for embedding storage and retrieval
+- **RAG (Retrieval-Augmented Generation)**: Methodology combining pre-trained models with external knowledge sources
+- **Streamlit**: Framework for creating interactive web applications
 
-### Who is This For?
-If you’re eager to:
-- Build AI tools that solve real problems
-- Collaborate and learn from experienced AI practitioners
-- Stay up-to-date with the latest in AI development
-- Turn your coding skills into actionable solutions
+## 📋 Table of Contents
 
-Then **The AI Guild** is the perfect fit for you.
+- [Project Components](#-project-components)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [How RAG Works](#-how-rag-works)
+- [Components Explained](#-components-explained)
+- [Contributing](#-contributing)
+- [License](#-license)
 
-### Frequently Asked Questions
-- **Q: Do I need to be an expert to join?**
-  - **A:** Not at all! The AI Guild is designed for all skill levels, from beginners to advanced developers.
-- **Q: Will I get personalized support?**
-  - **A:** Yes! You’ll have access to live Q&A sessions and direct feedback on your projects.
-- **Q: What kind of projects can I work on?**
-  - **A:** You can start with small projects like chatbots and automation tools, and progress to more advanced AI solutions tailored to your interests.
+## 🔧 Installation
 
-### How to Get Started
-Want to dive deeper and get the full experience? 🚀[Join the AI Guild Community](https://bit.ly/ai-guild-join) and unlock all the benefits of our growing community.
+### 1. Clone the Repository
 
-We look forward to seeing what you’ll build with us!
+```bash
+git clone https://github.com/AnupCloud/ollama_llama3.2_RAG.git
+cd ollama_llama3.2_RAG
+```
+
+### 2. Install Python Dependencies
+
+Ensure you have Python 3.7 or later installed:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Set Up Ollama
+
+Follow the [Ollama Documentation](https://ollama.ai/docs) to set up the platform on your machine.
+
+### 4. Install Chroma DB
+
+```bash
+pip install chromadb
+```
+
+### 5. Set Up Llama 3.2
+
+Follow instructions from the official Meta website or Ollama's deployment options.
+
+### 6. Install Streamlit
+
+```bash
+pip install streamlit
+```
+
+## 🚀 Usage
+
+### Example Python Script
+
+```python
+from ollama import Ollama
+from chromadb import ChromaDB
+from rag import RAG
+
+# Initialize components
+ollama_model = Ollama(model="llama-3.2")
+chroma_db = ChromaDB()
+rag = RAG(ollama_model, chroma_db)
+
+# Query and generate response
+query = "What are the latest advancements in AI?"
+response = rag.get_response(query)
+
+print(response)
+```
+
+### Running the Streamlit App
+
+```bash
+streamlit run app.py
+```
+
+## 🤖 How RAG Works
+
+RAG (Retrieval-Augmented Generation) combines a retriever (Chroma DB) with a generative model (Llama 3.2):
+
+1. **Input**: User submits a query
+2. **Retrieval**: Chroma DB searches for relevant information
+3. **Generation**: Llama 3.2 generates a response using query and retrieved context
+4. **Output**: Contextually-aware response returned to user
+
+## 📦 Components Explained
+
+### Ollama
+A platform for easy deployment of Large Language Models (LLMs) locally or in the cloud.
+
+### Llama 3.2
+Meta's state-of-the-art language model designed for:
+- Text generation
+- Question answering
+- Summarization
+- Translation
+
+### Chroma DB
+A high-performance vector database optimized for:
+- Embedding-based search
+- Fast information retrieval
+- Storing text vectors
+
+### RAG (Retrieval-Augmented Generation)
+Enhances language models by:
+- Combining generative models with external data sources
+- Providing more relevant and up-to-date responses
+- Increasing contextual awareness
+
+### Streamlit
+An open-source framework for creating interactive web applications, used here to:
+- Build a user-friendly interface
+- Allow query submission
+- Display RAG-generated responses
+
+## 🤝 Contributing
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository
+2. Create a new branch
+3. Make your changes
+4. Commit and push to your fork
+5. Open a pull request with a detailed description
+
+## 📄 License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
