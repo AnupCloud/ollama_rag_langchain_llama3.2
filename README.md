@@ -5,7 +5,7 @@
 This project implements a cutting-edge Retrieval-Augmented Generation (RAG) system utilizing state-of-the-art machine learning models and tools to enhance natural language understanding and response generation.
 
 ## 🚀 Project Components
-
+- **Python Version**: 3.12.8
 - **Ollama**: A tool for deploying large language models (LLMs)
 - **Llama 3.2**: Meta's advanced language model for diverse NLP tasks
 - **Chroma DB**: High-performance vector database for embedding storage and retrieval
