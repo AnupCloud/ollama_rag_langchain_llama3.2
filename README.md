@@ -85,6 +85,8 @@ print(response)
 ```bash
 streamlit run pdf-rag-streamlit.py
 ```
+## 🤖 RAG Sequence Diagram
+![rag_sequence_diagram](https://github.com/user-attachments/assets/7e5c1f8c-6293-4d66-982a-34fd68aeeac3)
 
 ## 🤖 How RAG Works
 
